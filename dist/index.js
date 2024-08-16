@@ -49,3 +49,127 @@ const greet3 = {
     age: 10
 };
 console.log(greet.age);
+const add = (n, m, c) => {
+    if (typeof c === "undefined")
+        console.log(n + m);
+    else {
+        console.log(n + m + c);
+    }
+};
+add(1, 2);
+const func1 = (...m) => {
+    // const func1 :newArr= (...m:number[]) =>{
+    console.log(m);
+    return m;
+};
+func1(1, 2, 3, 4, 1);
+const getDataNew = (products) => {
+    console.log(products);
+    // products.id ="1wh2y8why" //cannot be changed coz of read-only
+};
+const myprod = {
+    name: "Bhavil",
+    stock: 12,
+    id: "12345678",
+    price: 12,
+};
+getDataNew(myprod);
+const getnew = (prod) => {
+    console.log(prod);
+};
+const mynewprod = {
+    name: "rocky",
+    stock: 20,
+    id: "890",
+    price: 88,
+};
+getnew(mynewprod);
+//never type 
+const errorHandler = () => {
+    throw new Error();
+};
+//classes
+class Player {
+    constructor(h, w, b) {
+        this.h = h,
+            this.w = w;
+        this.b = b;
+    }
+    newPlayer() {
+        return this.w;
+    }
+    change() {
+        return `${this.b.toUpperCase()}`;
+    }
+}
+const bhavil = new Player(100, 200, "asdfgh");
+console.log(bhavil.h);
+console.log(bhavil.newPlayer());
+console.log(bhavil.change());
+class Player1 {
+    constructor(h, w, b) {
+        this.h = h;
+        this.w = w;
+    }
+}
+const bhavil1 = new Player1(300, 400, "asdfgh");
+console.log(bhavil1.h);
+class Player2 {
+    constructor(h, w, b) {
+        this.h = h;
+        this.w = w;
+    }
+}
+const bhavil2 = new Player1(300, 400, "asdfgh");
+console.log(bhavil1.h);
+class Player3 {
+    constructor(h, w, b) {
+        this.h = h;
+        this.w = w;
+        this.b = b;
+    }
+    newPlayer() {
+        return this.w;
+    }
+}
+class Player4 extends Player3 {
+    constructor(special, h, w, b) {
+        super(h, w, b);
+    }
+    getB() {
+        return this.b;
+    }
+}
+const bhavil3 = new Player4(false, 800, 200, 9000);
+console.log(bhavil3.h);
+console.log(bhavil3.getB());
+//getter and setter function
+class Player5 {
+    constructor(h, publicw, b) {
+        this.h = h;
+        this.b = b;
+    }
+    get getMyh() {
+        return this.h;
+    }
+    set changeMyh(val) {
+        this.h = val;
+    }
+}
+const bhavil5 = new Player5(1200, 200, "asdfgh");
+console.log(bhavil5.getMyh);
+bhavil5.changeMyh = 200;
+console.log(bhavil5.getMyh);
+class ProductType {
+    constructor(name, stock) {
+        this.name = name;
+        this.stock = stock;
+        this.id = String(Math.random() * 1000);
+    }
+    getID() {
+        return this.id;
+    }
+}
+const bhavil6 = new ProductType("macbook", 1);
+console.log(bhavil6.stock);
+console.log(bhavil6.getID());
